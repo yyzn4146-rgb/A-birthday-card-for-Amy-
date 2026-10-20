@@ -319,10 +319,347 @@
           <span>🎉</span> إطلاق احتفال
         </button>
       </div>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>معايدة إيمي الملكية ✨</title>
+  <!-- الخط الكوفي الأصيل -->
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #d4af37;
+      --gold-light: #fef1d2;
+      --navy-bg: #030710;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Reem Kufi', sans-serif;
+    }
+
+    body {
+      background-color: var(--navy-bg);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* الإطار الرئيسي المعاير على أبعاد الصورة بالضبط */
+    .card-frame {
+      position: relative;
+      width: 100%;
+      max-width: 410px;
+      height: 730px;
+      border-radius: 18px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.95);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 15px;
+    }
+
+    /* الصورة الأصلية خلفية للموقع */
+    .bg-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    /* الدائرة العلوية المخصصة لصورة إيمي فوق إطار الجليتر تماماً */
+    .photo-circle-trigger {
+      position: absolute;
+      top: 32px;
+      left: 32px;
+      width: 135px;
+      height: 135px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .photo-circle-trigger img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .photo-hint {
+      font-size: 0.75rem;
+      color: var(--gold-light);
+      font-weight: 700;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 4px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+    }
+
+    /* منطقة المحتوى في منتصف البطاقة */
+    .content-area {
+      position: relative;
+      z-index: 5;
+      margin-top: 185px; /* تنزيل المحتوى ليكون أسفل الدائرة العلوية */
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    .title-name {
+      font-size: 3.4rem;
+      font-weight: 900;
+      color: #ffffff;
+      text-shadow: 0 0 15px rgba(212, 175, 55, 0.9), 2px 2px 6px rgba(0,0,0,0.9);
+      margin-bottom: 2px;
+      letter-spacing: 1px;
+    }
+
+    .badge-sub {
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 3px 16px;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    /* المستطيل الزجاجي الشفاف لرسالة المعايدة (Glassmorphism) */
+    .greeting-box {
+      font-size: 0.98rem;
+      line-height: 1.8;
+      color: #ffffff;
+      background: rgba(8, 16, 32, 0.45); /* خلفية شبه شفافة لتظهر الخلفية */
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 14px 16px;
+      border-radius: 14px;
+      border-right: 4px solid var(--gold);
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      border-left: 1px solid rgba(212, 175, 55, 0.3);
+      margin-bottom: 12px;
+      text-align: justify;
+      text-align-last: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    /* المستطيل الزجاجي الشفاف لمفتاح النكد */
+    .nakad-panel {
+      background: rgba(8, 16, 32, 0.45);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-right: 4px solid var(--gold);
+      padding: 10px 14px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .nakad-info {
+      text-align: right;
+    }
+
+    .nakad-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    .nakad-status {
+      font-size: 0.8rem;
+      color: #ff5252;
+      font-weight: 700;
+      margin-top: 1px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    .nakad-status.off {
+      color: #4caf50;
+    }
+
+    /* مفتاح التشغيل والإيقاف */
+    .custom-switch {
+      position: relative;
+      width: 54px;
+      height: 28px;
+    }
+
+    .custom-switch input { opacity: 0; width: 0; height: 0; }
+
+    .slider {
+      position: absolute;
+      inset: 0;
+      background: rgba(229, 57, 53, 0.85);
+      border-radius: 28px;
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .slider::before {
+      content: "ON";
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      left: 3px;
+      bottom: 3px;
+      background: #ffffff;
+      color: #e53935;
+      font-size: 0.55rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    input:checked + .slider {
+      background: rgba(67, 160, 71, 0.85);
+    }
+
+    input:checked + .slider::before {
+      transform: translateX(25px);
+      content: "OFF";
+      color: #43a047;
+    }
+
+    /* الأزرار الملكية التفاعلية */
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      z-index: 5;
+    }
+
+    .action-btn {
+      background: linear-gradient(135deg, rgba(254, 241, 210, 0.9) 0%, rgba(212, 175, 55, 0.9) 100%);
+      color: #03060d;
+      border: 1px solid var(--gold);
+      padding: 9px 16px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* التنبيهات */
+    #toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: rgba(3, 7, 15, 0.95);
+      border: 1px solid var(--gold);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      opacity: 0;
+      transition: all 0.3s;
+      z-index: 1000;
+      text-align: center;
+      max-width: 90%;
+    }
+
+    #toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    #confetti-canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="card-frame">
+    <!-- الصورة الأصلية من المجلد -->
+    <img src="bg.jpg" class="bg-image" alt="الخلفية الملكية">
+
+    <!-- إطار الصورة الدائري المخصص لإيمي -->
+    <div class="photo-circle-trigger" onclick="document.getElementById('photoInput').click()">
+      <div id="circleContent">
+        <div class="photo-hint">إضافة صورة 📷</div>
+      </div>
+    </div>
+    <input type="file" id="photoInput" accept="image/*" style="display: none;" onchange="loadPhoto(event)">
+
+    <!-- المحتوى التفاعلي الشفاف بالمنتصف -->
+    <div class="content-area">
+      <h1 class="title-name">إيمي</h1>
+      <div class="badge-sub">✨ كل عام وأنتِ بخير وسعادة ✨</div>
+
+      <!-- مستطيل النص الزجاجي -->
+      <div class="greeting-box">
+        إيمي الحنونة النكدية، كل عام وأنتِ بخير وسعادة. يلي بيعرف قلبك الطيب والحنون بيعرف قديش أنتِ شخص استثنائي، حتى لو كان وضع (النكد) عندك بيشتغل أوتوماتيك أحيانًا! عقبال العمر كله يا رب. ❤️✨
+      </div>
+
+      <!-- مستطيل النكد الزجاجي -->
+      <div class="nakad-panel">
+        <div class="nakad-info">
+          <div class="nakad-title">وضع النكد الأوتوماتيكي ⚡</div>
+          <div class="nakad-status" id="statusText">الحالة: شغال بكامل الطاقات! 😈</div>
+        </div>
+        <label class="custom-switch">
+          <input type="checkbox" id="nakadToggle" onchange="toggleNakad(this)">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <!-- الأزرار -->
+      <div class="btn-group">
+        <button class="action-btn" onclick="toggleAudio()">
+          <span id="audioIcon">🎵</span> <span id="audioText">تشغيل الأغنية</span>
+        </button>
+        <button class="action-btn" onclick="launchConfetti()">
+          <span>🎉</span> إطلاق احتفال
+        </button>
+      </div>
     </div>
   </div>
 
-  <!-- ملف الأغنية الخاص بك المفروض رفعه باسم song.mp3 -->
+  <!-- الأغنية الخاصة بك -->
   <audio id="bgMusic" loop preload="auto">
     <source src="song.mp3" type="audio/mpeg">
   </audio>
@@ -335,7 +672,7 @@
       reader.onload = function() {
         const circle = document.getElementById('circleContent');
         circle.innerHTML = `<img src="${reader.result}" alt="صورة إيمي">`;
-        showToast("تم إضافة الصورة داخل الإطار الذهبي بنجاح! 👑✨");
+        showToast("تم إضافة الصورة بداخل الإطار الذهبي بنجاح! 👑✨");
       }
       reader.readAsDataURL(event.target.files[0]);
     }
@@ -347,7 +684,7 @@
         statusText.innerText = "الحالة: تم الإيقاف (طاقة الحب 100%) 💖";
         statusText.classList.add('off');
         launchConfetti();
-        showToast("تم إيقاف النكد بنجاح! 🥳 (سيعود تلقائياً بعد ثوانٍ)");
+        showToast("تم إيقاف النكد بنجاح! 🥳 (سيعود تلقائياً بعد 7 ثوانٍ)");
 
         clearTimeout(nakadTimer);
         nakadTimer = setTimeout(() => {
@@ -440,3 +777,4 @@
   </script>
 </body>
 </html>
+

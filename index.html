@@ -31,14 +31,11 @@
       overflow-x: hidden;
     }
 
-    /* الحاوية الرئيسية معيرة بالنسبة المئوية لتتطابق مع أبعاد الصورة الأصلية تماماً بدون قص */
+    /* الحاوية الرئيسية للبطاقة بالمقاسات الثابتة لضمان تطابق كامل للأبعاد */
     .card-frame {
       position: relative;
-      width: 100%;
-      max-width: 410px;
-      aspect-ratio: 9 / 16;
-      height: auto;
-      min-height: 720px;
+      width: 400px;
+      height: 711px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -49,7 +46,7 @@
       box-shadow: 0 15px 50px rgba(0, 0, 0, 0.95);
     }
 
-    /* الصورة الخلفية الأصلية كاملة بدون أي مط أو قص للزينة */
+    /* الخلفية الملكية الأصلية كاملة بدون أي قص */
     .bg-image {
       position: absolute;
       inset: 0;
@@ -60,13 +57,13 @@
       pointer-events: none;
     }
 
-    /* إطار صورة إيمي - معير بالنسب المئوية ليكون بمنتصف إطار الجليتر الأصلي بالظبط */
+    /* إطار صورة إيمي - مضبوط بإحداثيات بكسل دقيقة وثابتة لتنطبق تماماً في إطار الجليتر */
     .photo-circle-trigger {
       position: absolute;
-      top: 5.8%;
-      left: 8.8%;
-      width: 37.5%;
-      aspect-ratio: 1 / 1;
+      top: 24px;
+      left: 32px;
+      width: 125px;
+      height: 125px;
       border-radius: 50%;
       cursor: pointer;
       z-index: 10;
@@ -85,21 +82,27 @@
     }
 
     .photo-hint {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: var(--gold-light);
       font-weight: 700;
       text-align: center;
-      background: rgba(0, 0, 0, 0.65);
-      padding: 6px 10px;
-      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 4px 8px;
+      border-radius: 6px;
       border: 1px solid rgba(212, 175, 55, 0.7);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
     }
 
     /* منطقة المحتوى في منتصف البطاقة */
     .content-area {
       position: relative;
       z-index: 5;
-      margin-top: 210px;
+      margin-top: 175px;
       text-align: center;
       padding: 0 8px;
     }
@@ -300,9 +303,9 @@
     <!-- الصورة الخلفية الملكية -->
     <img src="bg.jpg" class="bg-image" alt="الخلفية الملكية">
 
-    <!-- الدائرة العلوية لإضافة صورة إيمي (متطابقة 100% في منتصف الإطار الجليتر الأصلي) -->
+    <!-- الدائرة العلوية لإضافة صورة إيمي (مضبوطة بـ بكسلات ثابتة حصرياً لإطار الجليتر) -->
     <div class="photo-circle-trigger" onclick="document.getElementById('photoInput').click()">
-      <div id="circleContent">
+      <div id="circleContent" style="width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
         <div class="photo-hint">إضافة صورة 📷</div>
       </div>
     </div>
@@ -354,7 +357,7 @@
       const reader = new FileReader();
       reader.onload = function() {
         const circle = document.getElementById('circleContent');
-        circle.innerHTML = `<img src="${reader.result}" alt="صورة إيمي">`;
+        circle.innerHTML = `<img src="${reader.result}" alt="صورة إيمي" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">`;
         showToast("تم إضافة الصورة داخل الإطار الذهبي بنجاح! 👑✨");
       }
       reader.readAsDataURL(event.target.files[0]);

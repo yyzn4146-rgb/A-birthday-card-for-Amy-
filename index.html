@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>معايدة إيمي الملكية ✨</title>
-  <!-- الخط الكوفي الأصيل -->
   <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -31,18 +30,19 @@
       overflow-x: hidden;
     }
 
-    /* الحاوية الرئيسية للبطاقة */
+    /* الحاوية الرئيسية للبطاقة بالمقاسات المضبوطة */
     .card-frame {
       position: relative;
-      width: 400px;
-      height: 720px;
+      width: 100%;
+      max-width: 410px;
+      min-height: 730px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       padding: 15px;
       background: #030710;
+      border-radius: 16px;
       overflow: hidden;
-      border-radius: 12px;
       box-shadow: 0 15px 50px rgba(0, 0, 0, 0.95);
     }
 
@@ -57,7 +57,7 @@
       pointer-events: none;
     }
 
-    /* محتوى البطاقة بالكامل */
+    /* محتوى البطاقة بالترتيب الصحيح */
     .content-area {
       position: relative;
       z-index: 5;
@@ -65,32 +65,25 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 5px;
+      width: 100%;
     }
 
     /* مربع إضافة الصورة الفاخر */
     .photo-box-trigger {
       width: 100%;
-      max-width: 360px;
-      height: 110px;
-      background: rgba(8, 16, 32, 0.55);
+      height: 100px;
+      background: rgba(8, 16, 32, 0.6);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border: 1px dashed var(--gold);
-      border-radius: 14px;
+      border-radius: 12px;
       cursor: pointer;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 10px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-      transition: 0.3s;
-    }
-
-    .photo-box-trigger:hover {
-      background: rgba(8, 16, 32, 0.75);
     }
 
     .photo-box-trigger img {
@@ -100,22 +93,18 @@
     }
 
     .photo-hint {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--gold-light);
       font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 8px;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
 
     .title-name {
-      font-size: 3.1rem;
+      font-size: 3.2rem;
       font-weight: 900;
       color: #ffffff;
       text-shadow: 0 0 15px rgba(212, 175, 55, 0.9), 2px 2px 6px rgba(0,0,0,0.9);
       margin-bottom: 2px;
-      letter-spacing: 1px;
     }
 
     .badge-sub {
@@ -129,25 +118,25 @@
       border-radius: 20px;
       font-size: 0.85rem;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     }
 
     /* المستطيل الزجاجي لرسالة المعايدة */
     .greeting-box {
-      font-size: 0.92rem;
+      font-size: 0.94rem;
       line-height: 1.75;
       color: #ffffff;
       background: rgba(8, 16, 32, 0.5);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      padding: 11px 14px;
-      border-radius: 14px;
+      padding: 12px 14px;
+      border-radius: 12px;
       border-right: 4px solid var(--gold);
       border-top: 1px solid rgba(212, 175, 55, 0.3);
       border-bottom: 1px solid rgba(212, 175, 55, 0.3);
       border-left: 1px solid rgba(212, 175, 55, 0.3);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       text-align: justify;
       text-align-last: center;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
@@ -162,12 +151,12 @@
       -webkit-backdrop-filter: blur(10px);
       border: 1px solid rgba(212, 175, 55, 0.5);
       border-right: 4px solid var(--gold);
-      padding: 8px 14px;
-      border-radius: 14px;
+      padding: 9px 14px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     }
 
@@ -253,7 +242,7 @@
       background: linear-gradient(135deg, rgba(254, 241, 210, 0.9) 0%, rgba(212, 175, 55, 0.9) 100%);
       color: #03060d;
       border: 1px solid var(--gold);
-      padding: 8px 14px;
+      padding: 9px 16px;
       border-radius: 10px;
       font-size: 0.85rem;
       font-weight: 700;
@@ -309,7 +298,7 @@
     <!-- محتوى البطاقة المتكامل -->
     <div class="content-area">
       
-      <!-- مربع إضافة الصورة الجديد كلياً -->
+      <!-- مربع إضافة الصورة -->
       <div class="photo-box-trigger" onclick="document.getElementById('photoInput').click()">
         <div id="boxContent" style="width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
           <div class="photo-hint">اضغط هنا لإضافة صورة إيمي 📷✨</div>
@@ -362,7 +351,7 @@
       reader.onload = function() {
         const box = document.getElementById('boxContent');
         box.innerHTML = `<img src="${reader.result}" alt="صورة إيمي">`;
-        showToast("تم إضافة صورة إيمي داخل المربع بنجاح! 👑✨");
+        showToast("تم إضافة صورة إيمي بنجاح! 👑✨");
       }
       reader.readAsDataURL(event.target.files[0]);
     }
@@ -392,3 +381,78 @@
     function showToast(msg) {
       const toast = document.getElementById('toast');
       toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    const music = document.getElementById('bgMusic');
+    let isPlaying = false;
+
+    function toggleAudio() {
+      if (isPlaying) {
+        music.pause();
+        isPlaying = false;
+        document.getElementById('audioIcon').innerText = '🎵';
+        document.getElementById('audioText').innerText = 'تشغيل الأغنية';
+      } else {
+        music.play().then(() => {
+          isPlaying = true;
+          document.getElementById('audioIcon').innerText = '⏸️';
+          document.getElementById('audioText').innerText = 'إيقاف الأغنية';
+        }).catch(() => {
+          showToast("اضغط مرة أخرى لتشغيل الصوت");
+        });
+      }
+    }
+
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+        function launchConfetti() {
+      particles = [];
+      const symbols = ['❤️', '✨', '💖', '⭐', '🌹', '🎉'];
+      for (let i = 0; i < 45; i++) {
+        particles.push({
+          x: canvas.width / 2,
+          y: canvas.height / 2,
+          vx: (Math.random() - 0.5) * 12,
+          vy: (Math.random() - 0.5) * 12 - 2,
+          size: Math.random() * 16 + 10,
+          symbol: symbols[Math.floor(Math.random() * symbols.length)],
+          alpha: 1
+        });
+      }
+      animateConfetti();
+    }
+
+    function animateConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p, index) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.1; // الجاذبية
+        p.alpha -= 0.012;
+
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, p.alpha);
+        ctx.font = `${p.size}px sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.fillText(p.symbol, p.x, p.y);
+        ctx.restore();
+
+        if (p.alpha <= 0) particles.splice(index, 1);
+      });
+
+      if (particles.length > 0) requestAnimationFrame(animateConfetti);
+    }
+  </script>
+</body>
+</html>
